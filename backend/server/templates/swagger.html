@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LAST LIGHT API — Swagger</title>
+  <link rel="stylesheet" href="{% url 'docs-asset' filename='docs.css' %}">
+  <script defer src="{% url 'docs-asset' filename='docs.js' %}"></script>
+</head>
+<body data-schema-url="{% url 'openapi-schema' %}"
+      data-swagger-js-url="{{ swagger_js_url }}" data-swagger-css-url="{{ swagger_css_url }}"
+      data-swagger-js-integrity="{{ swagger_js_integrity }}" data-swagger-css-integrity="{{ swagger_css_integrity }}"
+      data-session-backend="{{ session_backend|yesno:'true,false' }}"
+      {% if session_backend %}data-csrf-url="{% url 'csrf' %}"{% endif %}>
+  <header>
+    <h1>LAST LIGHT API</h1>
+    <p id="docs-status" role="status">Загрузка схемы API…</p>
+    <p><a href="{% url 'openapi-schema' %}">Схема OpenAPI JSON</a> · <a href="{% url 'admin:index' %}">Админка</a></p>
+  </header>
+  <noscript>Для интерактивных запросов включите JavaScript. Схема API доступна по ссылке выше.</noscript>
+  <main id="local-docs">
+    <p id="auth-help"></p>
+    <label id="jwt-control" hidden>JWT access token <input id="jwt-token" type="password" autocomplete="off"></label>
+    <div id="operations"></div>
+  </main>
+  <div id="swagger-ui" hidden></div>
+</body>
+</html>
