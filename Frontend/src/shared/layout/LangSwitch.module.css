@@ -1,0 +1,32 @@
+.root {
+  display: flex;
+  border: 1px solid var(--line);
+  border-radius: var(--r-s);
+  overflow: hidden;
+  font-size: var(--fs-xs);
+}
+
+.option {
+  padding: var(--s1) var(--s3);
+  border: 0;
+  background: transparent;
+  color: var(--text-2);
+  font: inherit;
+  cursor: pointer;
+  transition: color var(--t-fast), background var(--t-fast);
+}
+
+.option:hover {
+  color: var(--accent-soft);
+}
+
+.option:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: -2px;
+}
+
+.active {
+  background: var(--panel-2);
+  color: var(--accent);
+  cursor: default;
+}

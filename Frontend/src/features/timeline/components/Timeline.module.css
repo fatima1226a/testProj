@@ -1,0 +1,165 @@
+.readout {
+  color: var(--accent-soft);
+  font-size: var(--fs-xs);
+  font-variant-numeric: tabular-nums;
+}
+
+.chart {
+  width: 100%;
+  min-width: 0;
+}
+
+.svg {
+  display: block;
+  overflow: visible;
+}
+
+.label,
+.tick {
+  fill: var(--text-2);
+  font-size: 11px;
+}
+
+.tick {
+  font-variant-numeric: tabular-nums;
+}
+
+.sun {
+  fill: var(--sun);
+}
+
+.hatchBg {
+  fill: var(--shadow-zone);
+}
+
+.hatchLine {
+  stroke: #4a2f90;
+  stroke-width: 2;
+}
+
+.earthLane {
+  fill: var(--earth);
+}
+
+.gap {
+  fill: var(--shadow-zone);
+  stroke: var(--earth);
+  stroke-dasharray: 3 3;
+}
+
+.grid {
+  stroke: var(--line);
+  stroke-width: 1;
+  opacity: 0.6;
+}
+
+.min {
+  stroke: var(--fail);
+  stroke-dasharray: 3 4;
+}
+
+.minLabel {
+  fill: #ff9ab8;
+  font-size: 11px;
+}
+
+.battery {
+  fill: none;
+  stroke: var(--ok);
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.after {
+  fill: var(--panel);
+  opacity: 0.55;
+}
+
+.failLine {
+  stroke: var(--fail);
+  stroke-width: 2;
+}
+
+.failLabel {
+  fill: var(--fail);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.cursor line {
+  stroke: var(--text);
+  stroke-width: 1;
+}
+
+.cursor circle {
+  fill: var(--text);
+  stroke: var(--bg);
+  stroke-width: 2;
+}
+
+.transport {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--s2) var(--s3);
+  margin-top: var(--s2);
+}
+
+.speeds {
+  display: flex;
+  border: 1px solid var(--line);
+  border-radius: var(--r-s);
+  overflow: hidden;
+}
+
+.speed {
+  min-width: 40px;
+  min-height: 34px;
+  padding: 0 var(--s2);
+  border: 0;
+  background: transparent;
+  color: var(--text-2);
+  font: inherit;
+  font-size: var(--fs-xs);
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+}
+
+.speed + .speed {
+  border-left: 1px solid var(--line);
+}
+
+.speed[data-selected] {
+  background: var(--panel-2);
+  color: var(--accent-soft);
+}
+
+.speed[data-focus-visible] {
+  outline: 2px solid var(--focus);
+  outline-offset: -2px;
+}
+
+.scrub {
+  flex: 1 1 160px;
+  min-width: 120px;
+}
+
+.count {
+  color: var(--num);
+  font-size: var(--fs-s);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 10px var(--num-glow);
+}
+
+.note {
+  margin: var(--s2) 0 0;
+  color: var(--text-2);
+  font-size: var(--fs-xs);
+}
+
+@media (pointer: coarse) {
+  .speed {
+    min-height: 44px;
+  }
+}
