@@ -1,0 +1,53 @@
+.root {
+  min-width: 0;
+  height: 26px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--ok) var(--reserve, 40%), var(--panel));
+  color: #062016;
+  font: inherit;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform var(--t-fast) var(--ease);
+}
+
+.root:hover {
+  transform: translateY(-1px);
+}
+
+.root:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 1px;
+}
+
+.root[data-status='battery'] {
+  background: #4a1540;
+  color: #ffd2e8;
+}
+
+.root[data-status='terrain'] {
+  background: #2c1670;
+  border: 2px solid var(--accent);
+  color: var(--accent-soft);
+}
+
+.root[data-status='other'] {
+  background: #3a0f2a;
+  border: 2px solid var(--fail);
+  color: #ffb8cb;
+}
+
+.root[aria-pressed='true'] {
+  box-shadow:
+    0 0 0 2px var(--bg),
+    0 0 0 4px var(--accent),
+    0 0 16px var(--accent);
+}
+
+@media (pointer: coarse) {
+  .root {
+    height: 44px;
+  }
+}

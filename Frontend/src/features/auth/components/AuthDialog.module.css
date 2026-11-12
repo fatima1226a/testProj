@@ -1,0 +1,112 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: #05010fd0;
+}
+
+.overlay[data-entering] {
+  animation: fade var(--t-base) var(--ease);
+}
+
+.overlay[data-exiting] {
+  animation: fade var(--t-fast) var(--ease) reverse;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(420px, 100%);
+  border-left: 1px solid var(--line);
+  background: var(--panel);
+  overflow-y: auto;
+}
+
+.drawer[data-entering] {
+  animation: slide var(--t-base) var(--ease);
+}
+
+.dialog {
+  display: grid;
+  gap: var(--s4);
+  padding: var(--s5);
+  outline: none;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s3);
+}
+
+.title {
+  margin: 0;
+  font-size: 20px;
+}
+
+.section {
+  display: grid;
+  gap: var(--s2);
+  color: var(--text-2);
+  font-size: var(--fs-s);
+}
+
+.section p,
+.section ul {
+  margin: 0;
+}
+
+.section ul {
+  padding-left: var(--s4);
+}
+
+.section li + li {
+  margin-top: var(--s1);
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--text);
+  font-size: var(--fs-s);
+  font-weight: 600;
+}
+
+.section .checks {
+  padding: 0;
+  list-style: none;
+}
+
+.checks li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s3);
+  padding: var(--s2) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(100%);
+  }
+}
+
+@media (max-width: 767px) {
+  .drawer {
+    width: 100%;
+    border-left: 0;
+  }
+
+  .dialog {
+    padding: var(--s4);
+  }
+}

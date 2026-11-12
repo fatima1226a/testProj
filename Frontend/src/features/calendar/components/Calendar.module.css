@@ -1,0 +1,74 @@
+.aside {
+  color: var(--text-2);
+  font-size: var(--fs-xs);
+}
+
+.groups {
+  display: grid;
+  gap: var(--s3);
+}
+
+.grid {
+  display: grid;
+  align-items: center;
+  gap: 4px;
+}
+
+.day {
+  color: var(--text-2);
+  font-size: 11px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.siteTitle {
+  margin: 0 0 var(--s3);
+  color: var(--text);
+  font-size: var(--fs-l);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1) var(--s4);
+  margin: var(--s3) 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--text-2);
+  font-size: var(--fs-xs);
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: var(--s1);
+}
+
+.keyOk,
+.keyBattery,
+.keyEarth {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+.keyOk {
+  background: linear-gradient(90deg, color-mix(in srgb, var(--ok) 25%, var(--panel)), var(--ok));
+}
+
+.keyBattery {
+  background: #4a1540;
+}
+
+.keyEarth {
+  border: 2px solid var(--fail);
+}
+
+.note {
+  margin: var(--s2) 0 0;
+  color: var(--text-2);
+  font-size: var(--fs-xs);
+}
