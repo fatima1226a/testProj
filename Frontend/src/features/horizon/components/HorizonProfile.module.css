@@ -1,0 +1,120 @@
+.aside {
+  color: var(--text-2);
+  font-size: var(--fs-xs);
+}
+
+.chart {
+  width: 100%;
+  min-width: 0;
+}
+
+.svg {
+  display: block;
+  overflow: visible;
+}
+
+.grid {
+  stroke: var(--line);
+  opacity: 0.5;
+}
+
+.zero {
+  stroke: var(--line);
+}
+
+.tick {
+  fill: var(--text-2);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+
+.area {
+  fill: #2a1a60;
+}
+
+.line {
+  fill: none;
+  stroke: var(--text-2);
+  stroke-width: 1.5;
+}
+
+.path {
+  fill: none;
+  stroke: var(--sun);
+  stroke-width: 1.5;
+  stroke-dasharray: 2 4;
+  opacity: 0.7;
+}
+
+.sun,
+.earth,
+.sunHidden,
+.earthHidden {
+  stroke-width: 2;
+  transition:
+    cx var(--t-base) var(--ease),
+    cy var(--t-base) var(--ease);
+}
+
+.sun {
+  fill: var(--sun);
+  stroke: var(--bg);
+}
+
+.earth {
+  fill: var(--earth);
+  stroke: var(--bg);
+}
+
+.sunHidden {
+  fill: var(--bg);
+  stroke: var(--sun);
+}
+
+.earthHidden {
+  fill: var(--bg);
+  stroke: var(--earth);
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1) var(--s4);
+  margin: var(--s2) 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--text-2);
+  font-size: var(--fs-xs);
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: var(--s1);
+}
+
+.keyLine,
+.keyPath {
+  display: inline-block;
+  width: 16px;
+  height: 0;
+  border-top: 2px solid var(--text-2);
+}
+
+.keyPath {
+  border-top: 2px dotted var(--sun);
+}
+
+.legendSun {
+  color: var(--sun);
+}
+
+.legendEarth {
+  color: var(--earth);
+}
+
+.empty {
+  margin: var(--s2) 0 0;
+  color: var(--text-2);
+  font-size: var(--fs-xs);
+}

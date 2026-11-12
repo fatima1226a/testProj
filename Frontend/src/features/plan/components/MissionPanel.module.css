@@ -1,0 +1,128 @@
+.body {
+  display: grid;
+  gap: var(--s4);
+}
+
+.sites {
+  display: grid;
+  gap: var(--s2);
+}
+
+.groupLabel {
+  font-size: var(--fs-s);
+}
+
+.group {
+  display: grid;
+  gap: var(--s4);
+}
+
+.duration {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s2);
+  margin: 0;
+  padding: var(--s2) var(--s3);
+  border-radius: var(--r-s);
+  background: var(--bg);
+  color: var(--text-2);
+  font-size: var(--fs-xs);
+}
+
+.duration strong {
+  color: var(--text);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.pair {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s3);
+}
+
+.divider {
+  width: 100%;
+  margin: 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
+.note {
+  margin: 0;
+  color: var(--text-2);
+  font-size: var(--fs-xs);
+}
+
+.details {
+  border: 1px solid var(--line);
+  border-radius: var(--r-l);
+  background: var(--panel);
+}
+
+.details[open] {
+  padding-bottom: var(--s4);
+}
+
+.details > .body {
+  padding: 0 var(--s4);
+}
+
+.summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 var(--s2);
+  min-height: 44px;
+  padding: var(--s3) var(--s4);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.summary:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: var(--r-l);
+}
+
+.num {
+  color: var(--accent);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+.hint {
+  flex-basis: 100%;
+  color: var(--text-2);
+  font-size: var(--fs-xs);
+  font-weight: 400;
+}
+
+@media (min-width: 560px) and (max-width: 1023px) {
+  .details > .body {
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--s5);
+  }
+
+  .details .divider,
+  .details .note {
+    grid-column: 1 / -1;
+  }
+
+  .pair {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.requirement {
+  margin: calc(var(--s2) * -1) 0 0;
+  padding: var(--s2) var(--s3);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--r-s);
+  background: var(--panel-2);
+  color: var(--accent-soft);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+}

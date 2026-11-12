@@ -1,0 +1,54 @@
+.root {
+  display: grid;
+  gap: var(--s1);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 84px;
+  gap: var(--s2);
+}
+
+.cell {
+  display: grid;
+  gap: var(--s1);
+  min-width: 0;
+}
+
+.label {
+  font-size: var(--fs-s);
+}
+
+.input {
+  width: 100%;
+  height: 36px;
+  padding: 0 var(--s2);
+  border: 1px solid var(--line);
+  border-radius: var(--r-s);
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+  font-size: var(--fs-s);
+  font-variant-numeric: tabular-nums;
+}
+
+.input:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.input[aria-invalid='true'] {
+  border-color: var(--fail);
+}
+
+.error {
+  margin: 0;
+  color: var(--fail);
+  font-size: var(--fs-xs);
+}
+
+@media (pointer: coarse) {
+  .input {
+    height: 44px;
+  }
+}

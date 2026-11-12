@@ -1,0 +1,56 @@
+.root {
+  display: grid;
+  gap: var(--s1);
+  min-width: 0;
+}
+
+.label {
+  color: var(--text-2);
+  font-size: var(--fs-xs);
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  gap: var(--s1);
+  height: 34px;
+  padding: 0 var(--s2);
+  border: 1px solid var(--line);
+  border-radius: var(--r-s);
+  background: var(--bg);
+  transition: border-color var(--t-fast) var(--ease);
+}
+
+.group:focus-within {
+  border-color: var(--focus);
+}
+
+.root[data-invalid] .group {
+  border-color: var(--fail);
+}
+
+.input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: var(--fs-s);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.unit {
+  color: var(--text-2);
+  font-size: var(--fs-xs);
+}
+
+@media (pointer: coarse) {
+  .group {
+    height: 44px;
+  }
+}

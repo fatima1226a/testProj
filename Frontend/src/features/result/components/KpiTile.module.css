@@ -1,0 +1,41 @@
+.root {
+  min-width: 0;
+  padding: var(--s3);
+  background: var(--panel);
+}
+
+.label {
+  color: var(--text-2);
+  font-size: var(--fs-xs);
+  line-height: 1.3;
+}
+
+.flag {
+  color: var(--warn);
+}
+
+.value {
+  margin: var(--s1) 0 0;
+  white-space: nowrap;
+}
+
+.number {
+  color: var(--num);
+  font-size: 30px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 16px var(--num-glow);
+}
+
+.unit {
+  color: var(--text-2);
+  font-size: var(--fs-xs);
+}
+
+.warn .number {
+  text-shadow: 0 0 22px var(--num);
+}
+
+.warn {
+  box-shadow: inset 3px 0 0 var(--warn);
+}
