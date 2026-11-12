@@ -1,0 +1,17 @@
+node_modules/
+dist
+coverage
+*.local
+.env
+.env.*
+!.env.example
+*.tsbuildinfo
+.claude-flow
+
+
+venv/
+.venv/
+__pycache__/
+.DS_Store
+Thumbs.db
+*.part
