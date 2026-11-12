@@ -1,0 +1,39 @@
+.star {
+  fill: #eadfff;
+  opacity: 0.55;
+}
+
+.sun,
+.earth {
+  transition: opacity var(--t-scene) var(--ease);
+}
+
+.sun circle {
+  transition:
+    cx var(--t-base) var(--ease),
+    cy var(--t-base) var(--ease);
+}
+
+.hidden {
+  opacity: 0.12;
+}
+
+.halo {
+  fill: var(--sun);
+  opacity: 0.22;
+}
+
+.disc {
+  fill: var(--sun);
+  filter: drop-shadow(0 0 18px #ffe600);
+}
+
+.earthDisc {
+  fill: var(--earth);
+  filter: drop-shadow(0 0 12px var(--earth));
+}
+
+.land {
+  fill: #0a74ff;
+  opacity: 0.9;
+}

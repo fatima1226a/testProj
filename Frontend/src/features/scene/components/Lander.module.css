@@ -1,0 +1,237 @@
+.root {
+  --led: var(--ok);
+  filter: drop-shadow(0 0 9px rgb(184 77 255 / 0.75));
+}
+
+.leg {
+  stroke: #9a78ec;
+  stroke-width: 5;
+}
+
+.foot {
+  stroke: #b79cff;
+  stroke-width: 4;
+}
+
+.panels path:first-child {
+  fill: #2b0f78;
+  stroke: #c070ff;
+  stroke-width: 2;
+}
+
+.panels,
+.cells {
+  transition: opacity var(--t-scene) var(--ease);
+}
+
+.cells {
+  stroke: #e0a8ff;
+  fill: none;
+  opacity: 0.7;
+}
+
+.top {
+  fill: #a65cff;
+}
+
+.mast {
+  stroke: #c4a8ff;
+  stroke-width: 3;
+}
+
+.dish {
+  fill: none;
+  stroke: #f0d8ff;
+  stroke-width: 4;
+}
+
+.signal path,
+.noSignal path {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.signal path {
+  stroke: var(--earth);
+}
+
+.noSignal {
+  display: none;
+}
+
+.noSignal path {
+  stroke: var(--fail);
+}
+
+.lights circle {
+  fill: var(--led);
+  transition: fill var(--t-fast) var(--ease);
+}
+
+.led {
+  fill: var(--led);
+  transition: fill var(--t-scene) var(--ease);
+}
+
+.particles {
+  display: none;
+  fill: var(--sun);
+}
+
+.warning {
+  display: none;
+}
+
+.warning path:first-child {
+  fill: var(--warn);
+}
+
+.mark {
+  stroke: var(--bg);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+}
+
+.root[data-state='working'] .particles {
+  display: inline;
+  animation: rise 1.6s linear infinite;
+}
+
+.root[data-state='working'] .cells {
+  animation: shimmer 2.4s ease-in-out infinite;
+}
+
+.root[data-state='working'] .signal path {
+  animation: pulse 1.4s ease-out infinite;
+}
+
+.root[data-state='working'] .signal path:last-child {
+  animation-delay: 0.3s;
+}
+
+.root[data-state='charging'] {
+  --led: var(--sun);
+}
+
+.root[data-state='charging'] .led {
+  animation: breathe 2.8s ease-in-out infinite;
+}
+
+.root[data-state='danger'] {
+  --led: var(--warn);
+}
+
+.root[data-state='danger'] .led {
+  animation: alarm 0.9s steps(2, jump-none) infinite;
+}
+
+.root[data-state='danger'] .panels {
+  opacity: 0.6;
+}
+
+.root[data-state='danger'] .warning {
+  display: inline;
+}
+
+.root[data-state='fading'] {
+  --led: #3b2a70;
+}
+
+.root[data-state='fading'] .panels {
+  opacity: 0.35;
+}
+
+.root[data-state='fading'] .signal {
+  display: none;
+}
+
+.root[data-state='fading'] .lights circle {
+  animation: off 150ms linear forwards;
+}
+
+.root[data-state='fading'] .lights circle:nth-child(2) {
+  animation-delay: 150ms;
+}
+
+.root[data-state='fading'] .lights circle:nth-child(3) {
+  animation-delay: 300ms;
+}
+
+.root[data-state='fading'] .lights circle:nth-child(4) {
+  animation-delay: 450ms;
+}
+
+.root[data-state='noEarth'] {
+  --led: var(--earth);
+}
+
+.root[data-state='noEarth'] .signal {
+  display: none;
+}
+
+.root[data-state='noEarth'] .noSignal {
+  display: inline;
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-26px);
+    opacity: 0;
+  }
+}
+
+@keyframes shimmer {
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.9;
+  }
+  to {
+    opacity: 0.1;
+  }
+}
+
+@keyframes breathe {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@keyframes alarm {
+  from {
+    fill: var(--warn);
+  }
+  to {
+    fill: var(--fail);
+  }
+}
+
+@keyframes off {
+  to {
+    fill: #3b2a70;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .root *,
+  .root {
+    animation: none !important;
+  }
+
+  .root[data-state='working'] .particles {
+    display: none;
+  }
+
+  .root[data-state='fading'] .lights circle {
+    fill: #3b2a70;
+  }
+}
