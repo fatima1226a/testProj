@@ -1,0 +1,52 @@
+.root {
+  min-width: 0;
+  padding: var(--s4) var(--s4) var(--s4);
+  border: 1px solid var(--line);
+  border-radius: var(--r-l);
+  background: linear-gradient(160deg, rgb(32 16 80 / 0.94), rgb(14 6 38 / 0.94));
+  box-shadow:
+    0 0 0 1px rgb(184 77 255 / 0.1),
+    0 10px 44px rgb(70 0 160 / 0.38),
+    inset 0 1px 0 rgb(255 255 255 / 0.05);
+}
+
+.accent {
+  border-top: 2px solid var(--accent);
+  box-shadow:
+    0 -8px 24px -12px var(--accent),
+    0 10px 44px rgb(70 0 160 / 0.38);
+}
+
+.flush {
+  padding: 0;
+  overflow: hidden;
+}
+
+.flush > .head {
+  padding: var(--s4) var(--s4) 0;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--s2) var(--s3);
+  margin-bottom: var(--s3);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--fs-m);
+  font-weight: 600;
+}
+
+.num {
+  margin-right: var(--s2);
+  color: var(--accent);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 10px var(--accent);
+}

@@ -1,0 +1,50 @@
+:root {
+  --bg: #05010f;
+  --bg-2: #0b0424;
+  --panel: #120a2e;
+  --panel-2: #1c1048;
+  --line: #4527a0;
+  --text: #f6f0ff;
+  --text-2: #bfaee8;
+  --accent: #b84dff;
+  --accent-2: #7b3dff;
+  --accent-soft: #e0b8ff;
+  --glow: 0 0 18px rgb(184 77 255 / 0.55);
+  --sun: #ffe600;
+  --earth: #00d9ff;
+  --ok: #3dffb0;
+  --fail: #ff3d71;
+  --warn: #ff5ad2;
+  --focus: #00e5ff;
+  --shadow-zone: #1a0f40;
+  --demo: #e0b8ff;
+  --num: #ff2d4a;
+  --num-glow: rgb(255 45 74 / 0.45);
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s5: 24px;
+  --s6: 32px;
+  --fs-xs: 12px;
+  --fs-s: 14px;
+  --fs-m: 16px;
+  --fs-l: 18px;
+  --fs-xl: 28px;
+  --fs-xxl: 36px;
+  --r-s: 8px;
+  --r-m: 12px;
+  --r-l: 16px;
+  --t-fast: 120ms;
+  --t-base: 240ms;
+  --t-scene: 600ms;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --t-fast: 0ms;
+    --t-base: 0ms;
+    --t-scene: 0ms;
+  }
+}

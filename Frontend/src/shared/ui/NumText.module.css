@@ -1,0 +1,7 @@
+.num {
+  color: var(--num);
+  font-size: 1.18em;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 12px var(--num-glow);
+}
